@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dkyhslxf0micx"]
+
+[ext_resource type="Script" uid="uid://cqlxlj7sm05ux" path="res://Assets/Scripts/exit_level_key.gd" id="1_4f3sm"]
+[ext_resource type="Texture2D" uid="uid://7mad5u8xou7s" path="res://Assets/Sprites/key.png" id="3_j52lc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfq13"]
+radius = 4.0
+height = 20.0
+
+[node name="ExitLevelKey" type="Area2D" unique_id=1005972488 node_paths=PackedStringArray("sprite") groups=["exit_level"]]
+collision_layer = 65536
+script = ExtResource("1_4f3sm")
+sprite = NodePath("KeyExit")
+
+[node name="KeyExit" type="Sprite2D" parent="." unique_id=12186824]
+texture = ExtResource("3_j52lc")
+
+[node name="KeyCollision" type="CollisionShape2D" parent="." unique_id=130146330]
+shape = SubResource("CapsuleShape2D_xfq13")

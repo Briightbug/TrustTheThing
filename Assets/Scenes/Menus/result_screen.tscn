@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bncq1tg78g0sl"]
+
+[ext_resource type="Script" uid="uid://di187b1ldel3c" path="res://Assets/Scripts/result_screen.gd" id="1_1taxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm6sg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ey4g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1t0i6"]
+
+[node name="ResultScreen" type="Control" unique_id=1561935091 node_paths=PackedStringArray("results_label", "final_time_time", "final_death_label", "fake_retry_button", "fake_quit_button", "real_retry", "real_quit", "fake_quit_label", "margin_container") groups=["result_screen"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1taxo")
+results_label = NodePath("MarginContainer/Results/ResultLabel")
+final_time_time = NodePath("MarginContainer/Results/FinalTime/FinalTimeTime")
+final_death_label = NodePath("MarginContainer/Results/FinalDeathsLabel")
+fake_retry_button = NodePath("MarginContainer/Results/FakeButtons/FakeRetryButton")
+fake_quit_button = NodePath("MarginContainer/Results/FakeButtons/FakeQuitButton")
+real_retry = NodePath("MarginContainer/Results/RealButtons/RetryButton")
+real_quit = NodePath("MarginContainer/Results/RealButtons/QuitButton")
+fake_quit_label = NodePath("FakeQuitLabel")
+margin_container = NodePath("MarginContainer")
+
+[node name="Panel" type="Panel" parent="." unique_id=1967819096]
+modulate = Color(1, 1, 1, 0.4627451)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -161.0
+offset_right = 251.5
+offset_bottom = 162.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FakeQuitLabel" type="Label" parent="." unique_id=629143828]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.5
+offset_top = -55.0
+offset_right = 295.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Hehe!! Nice try!"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=770870453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.5
+offset_top = -162.0
+offset_right = 261.5
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Results" type="VBoxContainer" parent="MarginContainer" unique_id=1290371782]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="MarginContainer/Results" unique_id=1353245203]
+layout_mode = 2
+theme_override_font_sizes/font_size = 39
+text = "Results"
+horizontal_alignment = 1
+
+[node name="FinalTime" type="HBoxContainer" parent="MarginContainer/Results" unique_id=502895511]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="FinalTimeLabel" type="Label" parent="MarginContainer/Results/FinalTime" unique_id=1828136544]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Final Time: "
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/Results/FinalTime" unique_id=734873841]
+layout_mode = 2
+theme_override_constants/separation = 221
+theme_override_styles/separator = SubResource("StyleBoxFlat_tm6sg")
+
+[node name="FinalTimeTime" type="Label" parent="MarginContainer/Results/FinalTime" unique_id=1967244692]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "[Final time here]"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Results" unique_id=705559950]
+layout_mode = 2
+theme_override_constants/separation = 50
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4ey4g")
+
+[node name="FinalDeathsLabel" type="Label" parent="MarginContainer/Results" unique_id=1388194913]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Deaths: "
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/Results" unique_id=2124708648]
+layout_mode = 2
+theme_override_constants/separation = 60
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4ey4g")
+
+[node name="FakeButtons" type="HBoxContainer" parent="MarginContainer/Results" unique_id=1152158658]
+layout_mode = 2
+
+[node name="FakeRetryButton" type="Button" parent="MarginContainer/Results/FakeButtons" unique_id=1615455976]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Retry?"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/Results/FakeButtons" unique_id=119176174]
+layout_mode = 2
+theme_override_constants/separation = 78
+theme_override_styles/separator = SubResource("StyleBoxEmpty_1t0i6")
+
+[node name="FakeQuitButton" type="Button" parent="MarginContainer/Results/FakeButtons" unique_id=747276010]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Back to menu"
+
+[node name="RealButtons" type="VBoxContainer" parent="MarginContainer/Results" unique_id=589654399]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="MarginContainer/Results/RealButtons" unique_id=101200403]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MarginContainer/Results/RealButtons" unique_id=156709421]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/Results/FakeButtons/FakeRetryButton" to="." method="_on_fake_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Results/FakeButtons/FakeQuitButton" to="." method="_on_fake_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Results/RealButtons/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Results/RealButtons/QuitButton" to="." method="_on_quit_button_pressed"]

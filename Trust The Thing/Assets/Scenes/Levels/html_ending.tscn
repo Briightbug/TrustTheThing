@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d3ma75lceiis6"]
+
+[ext_resource type="Script" uid="uid://c6vsptr7y724t" path="res://Assets/Scripts/html_ending.gd" id="1_gpv2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t0i6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cboxo"]
+size = Vector2(50, 20)
+
+[node name="HTMLEnding" type="Area2D" unique_id=1819348967 node_paths=PackedStringArray("html_end_text") groups=["html_ending"]]
+script = ExtResource("1_gpv2w")
+html_end_text = NodePath("CollisionShape2D/AnimatableBody2D/Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016698890]
+shape = SubResource("CircleShape2D_1t0i6")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="CollisionShape2D" unique_id=2093478361]
+position = Vector2(-1, -20)
+
+[node name="Label" type="Label" parent="CollisionShape2D/AnimatableBody2D" unique_id=1356695159]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/AnimatableBody2D" unique_id=1345713801]
+shape = SubResource("RectangleShape2D_cboxo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ca8imcmrlv7r1"]
+
+[ext_resource type="Texture2D" uid="uid://7mad5u8xou7s" path="res://Assets/Sprites/key.png" id="1_7hthr"]
+[ext_resource type="Script" uid="uid://ct8efyv28h1ls" path="res://Assets/Scripts/hud.gd" id="1_w5d3o"]
+[ext_resource type="LabelSettings" uid="uid://d20mru33aouvo" path="res://Assets/UI Settings/new_label_settings.tres" id="2_had68"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5d3o"]
+font_size = 32
+outline_size = 3
+outline_color = Color(0.019925633, 0.019925632, 0.019925632, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rfqbw"]
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.64705884, 0, 0, 0.42352942)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4a7rl"]
+font_size = 32
+
+[node name="HUD" type="Control" unique_id=1275790817 node_paths=PackedStringArray("keys_label", "door_label", "deaths_label", "stopwatch_label") groups=["hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w5d3o")
+keys_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/KeysLabel")
+door_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/DoorLabel")
+deaths_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/DeathsLabel")
+stopwatch_label = NodePath("MarginContainer/TimerLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=425486178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1962101150]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=160970027]
+layout_mode = 2
+
+[node name="Keys" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1114024070]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("1_7hthr")
+stretch_mode = 6
+
+[node name="KeysLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=62224615]
+layout_mode = 2
+text = "TestKey"
+label_settings = ExtResource("2_had68")
+
+[node name="DoorLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=328197968]
+layout_mode = 2
+text = "TestDoor"
+label_settings = SubResource("LabelSettings_w5d3o")
+
+[node name="DeathsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=840125470]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Deaths: 0"
+label_settings = SubResource("LabelSettings_rfqbw")
+
+[node name="TimerLabel" type="Label" parent="MarginContainer" unique_id=52780048]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_4a7rl")

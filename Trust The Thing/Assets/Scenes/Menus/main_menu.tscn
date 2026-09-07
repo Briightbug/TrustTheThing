@@ -1,0 +1,273 @@
+[gd_scene format=3 uid="uid://068ro82otlge"]
+
+[ext_resource type="Script" uid="uid://cpljohad40e6m" path="res://Assets/Scripts/main_menu.gd" id="1_kmnvk"]
+[ext_resource type="AudioStream" uid="uid://14ccehhx8m8l" path="res://Assets/Sound/BackgroundMusic/Track 1.mp3" id="2_6hupj"]
+[ext_resource type="Script" uid="uid://chullmgegi0yr" path="res://Assets/Scripts/volume_slider.gd" id="3_geq66"]
+[ext_resource type="Script" uid="uid://b2esnhm2wximm" path="res://Assets/Scripts/fullscreen_toggle.gd" id="4_bvlw0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5xeu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmnvk"]
+bg_color = Color(0.21858579, 0.24151579, 0.29101023, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.44313726)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5xeu"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.44313726)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hupj"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.44313726)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_geq66"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1t0i6"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tm6sg"]
+color = Color(0.53333336, 0.6431373, 1, 1)
+thickness = 5
+
+[node name="MainMenu" type="Control" unique_id=526297834 node_paths=PackedStringArray("main_buttons", "start_button", "options_button", "exit_button", "options_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kmnvk")
+main_buttons = NodePath("Buttons")
+start_button = NodePath("Buttons/StartButton")
+options_button = NodePath("Buttons/OptionsButton")
+exit_button = NodePath("Buttons/ExitButton")
+options_panel = NodePath("Options")
+
+[node name="Panel" type="Panel" parent="." unique_id=1128403243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a5xeu")
+
+[node name="GameName" type="Label" parent="." unique_id=281387017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -251.0
+offset_right = 91.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 64
+text = "Trust The Thing"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1695579470]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.75
+offset_top = -114.75
+offset_right = 133.75
+offset_bottom = 114.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="StartButton" type="Button" parent="Buttons" unique_id=1734829176]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmnvk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5xeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hupj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_geq66")
+text = "Start game"
+
+[node name="OptionsButton" type="Button" parent="Buttons" unique_id=1903004034]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmnvk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5xeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hupj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_geq66")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="Buttons" unique_id=160438350]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmnvk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5xeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hupj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_geq66")
+text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=176129840]
+stream = ExtResource("2_6hupj")
+volume_db = 24.0
+pitch_scale = 0.7
+autoplay = true
+attenuation = 0.13869628
+panning_strength = 0.0
+bus = &"BackgroundMusic"
+
+[node name="Options" type="Panel" parent="." unique_id=1296277406]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -163.0
+offset_right = 217.5
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options" unique_id=1157477434]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_top = 14.0
+offset_right = 43.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "Options"
+
+[node name="Back" type="Button" parent="Options" unique_id=761293238]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -77.0
+offset_right = 88.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kmnvk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a5xeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hupj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_geq66")
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options" unique_id=1835959571]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.75
+offset_top = -50.5
+offset_right = 152.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="Options/VBoxContainer" unique_id=609789786]
+layout_mode = 2
+text = "Master Volume:"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Options/VBoxContainer" unique_id=615855590]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_1t0i6")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_tm6sg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_tm6sg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_geq66")
+audio_bus_name = "Master"
+
+[node name="BackgroundMusicLabel" type="Label" parent="Options/VBoxContainer" unique_id=958034077]
+layout_mode = 2
+text = "Music:"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Options/VBoxContainer" unique_id=1929395570]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_1t0i6")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_tm6sg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_tm6sg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_geq66")
+audio_bus_name = "BackgroundMusic"
+
+[node name="SFXVolumeLabel" type="Label" parent="Options/VBoxContainer" unique_id=1443250838]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Options/VBoxContainer" unique_id=1228615036]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_1t0i6")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_tm6sg")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_tm6sg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_geq66")
+audio_bus_name = "SFX"
+
+[node name="FullscreenToggle" type="CheckBox" parent="Options/VBoxContainer" unique_id=1051705767]
+layout_mode = 2
+text = "Toggle Fullscreen"
+script = ExtResource("4_bvlw0")
+
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Options/VBoxContainer/MasterVolumeSlider" to="Options/VBoxContainer/MasterVolumeSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer/MusicVolumeSlider" to="Options/VBoxContainer/MusicVolumeSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer/SFXVolumeSlider" to="Options/VBoxContainer/SFXVolumeSlider" method="_on_value_changed"]
+[connection signal="toggled" from="Options/VBoxContainer/FullscreenToggle" to="Options/VBoxContainer/FullscreenToggle" method="_on_toggled"]

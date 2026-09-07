@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b87nbtrvxou1m"]
+
+[ext_resource type="PackedScene" uid="uid://dwi60uwajkyx6" path="res://Assets/Scenes/player.tscn" id="1_0ti3t"]
+[ext_resource type="PackedScene" uid="uid://ca8imcmrlv7r1" path="res://Assets/Scenes/UI/hud.tscn" id="1_6k5g7"]
+[ext_resource type="PackedScene" uid="uid://bd6arn5ye84pl" path="res://Assets/Scenes/stopwatch.tscn" id="2_j02rm"]
+
+[node name="Gameplay" type="Node2D" unique_id=1104114632]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1127997324]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1275790817 instance=ExtResource("1_6k5g7")]
+
+[node name="Stopwatch" parent="." unique_id=2142100631 instance=ExtResource("2_j02rm")]
+
+[node name="Player" parent="." unique_id=718501134 instance=ExtResource("1_0ti3t")]
+position = Vector2(0, -12)
+collision_mask = 65792
+
+[node name="Level" type="Node2D" parent="." unique_id=1177885573 groups=["level_container"]]

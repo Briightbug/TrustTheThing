@@ -1,0 +1,26 @@
+extends Area2D
+class_name HTMLEnd
+
+@export var html_end_text : Label
+
+var stopwatch : Stopwatch
+
+var paused = false
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+
+func _on_body_entered(body: Node2D) -> void:
+	stopwatch = get_tree().get_first_node_in_group("stopwatch")
+	
+	# Pauses the game when reached the goal in the final level
+	if body is PlayerController and paused == false:
+		html_end_text.text = "You won!"
+		paused = true
+		get_tree().paused = true
+		
+		if paused:
+			stopwatch.stopped = true
+		
+		GameManager.result_screen.visible = true
+		GameManager.hud.visible = false
