@@ -1,4 +1,5 @@
 extends Control
+class_name Result
 
 @export var result_screen : Control
 @export var results_label : Label

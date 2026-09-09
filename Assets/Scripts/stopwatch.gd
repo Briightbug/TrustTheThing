@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 func stop():
 	hud = get_tree().get_first_node_in_group("hud")
 	stopped = true
-	hud.stopwatch_label.text = time_to_string()
+	return
 
 func time_to_string() -> String:
 	# Turn the time var into a string for UI display
