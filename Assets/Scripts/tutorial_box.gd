@@ -7,6 +7,8 @@ class_name TutorialBox
 @export var tween_ease : Tween.EaseType
 @export var transition : Tween.TransitionType
 
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
 		tutorial_text.text = "Press [A] or [D] to walk"

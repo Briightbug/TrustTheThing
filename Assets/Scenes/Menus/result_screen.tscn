@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1t0i6"]
 
-[node name="ResultScreen" type="Control" unique_id=1561935091 node_paths=PackedStringArray("results_label", "final_time_time", "final_death_label", "fake_retry_button", "fake_quit_button", "real_retry", "real_quit", "fake_quit_label", "margin_container") groups=["result_screen"]]
+[node name="ResultScreen" type="Control" unique_id=1561935091 node_paths=PackedStringArray("result_screen", "results_label", "final_time_time", "final_death_label", "fake_retry_button", "fake_quit_button", "real_retry", "real_quit", "fake_quit_label", "margin_container") groups=["result_screen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1taxo")
+result_screen = NodePath(".")
 results_label = NodePath("MarginContainer/Results/ResultLabel")
 final_time_time = NodePath("MarginContainer/Results/FinalTime/FinalTimeTime")
 final_death_label = NodePath("MarginContainer/Results/FinalDeathsLabel")

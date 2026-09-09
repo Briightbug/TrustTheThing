@@ -2,7 +2,7 @@ extends Node
 
 signal area_stopped
 
-var starting_level = 1
+var starting_level = 3
 var current_level = 1
 var level_path = "res://Assets/Scenes/Levels/"
 var full_path = level_path + "level_" + str(current_level) + ".tscn"

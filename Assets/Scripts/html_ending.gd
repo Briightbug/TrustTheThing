@@ -15,7 +15,6 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# Pauses the game when reached the goal in the final level
 	if body is PlayerController and paused == false:
-		html_end_text.text = "You won!"
 		paused = true
 		get_tree().paused = true
 		

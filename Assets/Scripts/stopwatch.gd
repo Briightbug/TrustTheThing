@@ -8,14 +8,17 @@ var hud : HUD
 
 func _ready() -> void:
 	GameManager.area_stopped.connect(stop)
+	stopped = false
 
-func _process(delta: float):
+func _process(delta: float) -> void:
 	if stopped:
 		return
 	time += delta
 
 func stop():
-	hud.stopwatch_label.text = time
+	hud = get_tree().get_first_node_in_group("hud")
+	stopped = true
+	hud.stopwatch_label.text = time_to_string()
 
 func time_to_string() -> String:
 	# Turn the time var into a string for UI display

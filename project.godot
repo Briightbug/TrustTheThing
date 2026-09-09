@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Trust No One Brackeys Jam"
-run/main_scene="uid://bncq1tg78g0sl"
+run/main_scene="uid://068ro82otlge"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -37,6 +37,7 @@ hud=""
 stopwatch=""
 level_container=""
 result_screen=""
+html_ending=""
 
 [input]
 

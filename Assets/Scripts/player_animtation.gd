@@ -4,7 +4,7 @@ extends Node2D
 @export var animation_player : AnimationPlayer
 @export var sprite_2d : Sprite2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Flips character sprite
 	if player_controller.direction == 1:
 		sprite_2d.flip_h = false
