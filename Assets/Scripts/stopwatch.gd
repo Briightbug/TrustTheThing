@@ -4,21 +4,23 @@ class_name Stopwatch
 var time = 0.0
 var stopped = false
 
+var result_screen : Result
 var hud : HUD
 
 func _ready() -> void:
 	GameManager.area_stopped.connect(stop)
-	stopped = false
 
 func _process(delta: float) -> void:
+	stopped = false
 	if stopped:
 		return
 	time += delta
 
 func stop():
+	result_screen = get_tree().get_first_node_in_group("result_screen")
 	hud = get_tree().get_first_node_in_group("hud")
 	stopped = true
-	return
+	result_screen.final_time_time.text = hud.stopwatch_label.text
 
 func time_to_string() -> String:
 	# Turn the time var into a string for UI display

@@ -24,7 +24,7 @@ func _ready() -> void:
 	fake_quit_label.text = "Haha!! Nice try!"
 	fake_quit_label.visible = false
 	
-	final_time_time.text = str(stopwatch.stop())
+	final_time_time.text = str(stopwatch.stop()) # Currently outputs <null>
 	final_death_label.text = "Deaths: " + str(GameManager.deaths)
 	
 	real_quit.visible = false

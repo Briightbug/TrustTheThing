@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b6uont2g413ub"]
 
 [ext_resource type="PackedScene" uid="uid://b0t7301sua3yi" path="res://Assets/Scenes/Levels/test.tscn" id="1_6kx22"]
-[ext_resource type="PackedScene" uid="uid://boure12lplcpm" path="res://Assets/Scenes/moving_platform.tscn" id="2_35h13"]
-[ext_resource type="PackedScene" uid="uid://dkyhslxf0micx" path="res://Assets/Scenes/exit_level_key.tscn" id="2_yq4hg"]
+[ext_resource type="PackedScene" uid="uid://boure12lplcpm" path="res://Assets/Scenes/Interactables/moving_platform.tscn" id="2_35h13"]
+[ext_resource type="PackedScene" uid="uid://dkyhslxf0micx" path="res://Assets/Scenes/Transitions/exit_level_key.tscn" id="2_yq4hg"]
 [ext_resource type="PackedScene" uid="uid://d3ma75lceiis6" path="res://Assets/Scenes/Levels/html_ending.tscn" id="3_s2fcv"]
 [ext_resource type="AudioStream" uid="uid://cd8i2fi8njomn" path="res://Assets/Sound/BackgroundMusic/Track 4.mp3" id="6_dqgro"]
 
