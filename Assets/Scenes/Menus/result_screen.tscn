@@ -8,7 +8,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1t0i6"]
 
-[node name="ResultScreen" type="Control" unique_id=1561935091 node_paths=PackedStringArray("result_screen", "results_label", "final_time_time", "final_death_label", "fake_retry_button", "fake_quit_button", "real_retry", "real_quit", "fake_quit_label", "margin_container") groups=["result_screen"]]
+[node name="ResultScreen" type="Control" unique_id=1561935091 node_paths=PackedStringArray("result_screen", "results_label", "final_time_time", "final_death_label", "fake_retry_button", "fake_quit_button", "real_retry_button", "real_quit_button", "fake_quit_label", "margin_container") groups=["result_screen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,8 +22,8 @@ final_time_time = NodePath("MarginContainer/Results/FinalTime/FinalTimeTime")
 final_death_label = NodePath("MarginContainer/Results/FinalDeathsLabel")
 fake_retry_button = NodePath("MarginContainer/Results/FakeButtons/FakeRetryButton")
 fake_quit_button = NodePath("MarginContainer/Results/FakeButtons/FakeQuitButton")
-real_retry = NodePath("MarginContainer/Results/RealButtons/RetryButton")
-real_quit = NodePath("MarginContainer/Results/RealButtons/QuitButton")
+real_retry_button = NodePath("MarginContainer/Results/RealButtons/RetryButton")
+real_quit_button = NodePath("MarginContainer/Results/RealButtons/QuitButton")
 fake_quit_label = NodePath("FakeQuitLabel")
 margin_container = NodePath("MarginContainer")
 

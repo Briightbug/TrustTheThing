@@ -7,8 +7,8 @@ class_name Result
 @export var final_death_label : Label
 @export var fake_retry_button : Button
 @export var fake_quit_button : Button
-@export var real_retry : Button
-@export var real_quit : Button
+@export var real_retry_button : Button
+@export var real_quit_button : Button
 @export var fake_quit_label : Label
 @export var margin_container : MarginContainer
 
@@ -21,24 +21,25 @@ func _ready() -> void:
 	hud = get_tree().get_first_node_in_group("hud")
 	html_ending = get_tree().get_first_node_in_group("html_ending")
 	
-	fake_quit_label.text = "Haha!! Nice try!"
 	fake_quit_label.visible = false
-	
-
-	
-	real_quit.visible = false
-	real_retry.visible = false
+	real_quit_button.visible = false
+	real_retry_button.visible = false
 
 func _process(_delta: float) -> void:
 	final_time_time.text = str(stopwatch.stop())
 	final_death_label.text = "Deaths: " + str(GameManager.deaths)
 
 func _on_fake_retry_button_pressed() -> void:
-	GameManager.load_level(GameManager.current_level)
+	if fake_quit_label.visible == false:
+		fake_quit_label.visible = true
+		fake_quit_label.text = "Haha!! Nice try!"
+		var timer = get_tree().create_timer(2.0)
+		await timer.timeout
+		fake_quit_label.visible = false
 
 func _on_fake_quit_button_pressed() -> void:
-	real_quit.visible = true
-	real_retry.visible = true
+	real_quit_button.visible = true
+	real_retry_button.visible = true
 
 func _on_retry_button_pressed() -> void:
 	GameManager.load_level(GameManager.starting_level)

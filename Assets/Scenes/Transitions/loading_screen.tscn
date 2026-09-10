@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bcss2gd0403p8"]
+
+[ext_resource type="Script" uid="uid://crv8xkvhlll4m" path="res://Assets/Scripts/loading_screen.gd" id="1_q8sn2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ty33"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvo32"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktif2"]
+bg_color = Color(0.081141405, 0.43780723, 0.4030517, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_wf015"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v2lfg"]
+resource_name = "transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tg4cr"]
+_data = {
+&"RESET": SubResource("Animation_wf015"),
+&"transition": SubResource("Animation_v2lfg")
+}
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=987960789 node_paths=PackedStringArray("animation_player", "progress_bar")]
+layer = 10
+script = ExtResource("1_q8sn2")
+animation_player = NodePath("AnimationPlayer")
+progress_bar = NodePath("Panel/ProgressBar")
+
+[node name="Panel" type="Panel" parent="." unique_id=1457676515]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ty33")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel" unique_id=1582623008]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -55.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_dvo32")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ktif2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1264048218]
+libraries/ = SubResource("AnimationLibrary_tg4cr")
+autoplay = &"transition"

@@ -64,6 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kmnvk")
+initial_scene = &"uid://bgrak58ssg5d"
 main_buttons = NodePath("Buttons")
 start_button = NodePath("Buttons/StartButton")
 options_button = NodePath("Buttons/OptionsButton")
