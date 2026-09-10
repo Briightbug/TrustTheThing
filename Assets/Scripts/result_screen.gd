@@ -24,11 +24,14 @@ func _ready() -> void:
 	fake_quit_label.text = "Haha!! Nice try!"
 	fake_quit_label.visible = false
 	
-	final_time_time.text = str(stopwatch.stop()) # Currently outputs <null>
-	final_death_label.text = "Deaths: " + str(GameManager.deaths)
+
 	
 	real_quit.visible = false
 	real_retry.visible = false
+
+func _process(_delta: float) -> void:
+	final_time_time.text = str(stopwatch.stop())
+	final_death_label.text = "Deaths: " + str(GameManager.deaths)
 
 func _on_fake_retry_button_pressed() -> void:
 	GameManager.load_level(GameManager.current_level)
