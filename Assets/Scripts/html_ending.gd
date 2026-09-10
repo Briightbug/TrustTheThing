@@ -15,7 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
 		get_tree().paused = true
 		if get_tree().paused == true:
-			stopwatch.stopped = true
+			stopwatch.stop()
 		
 		GameManager.result_screen.visible = true
 		GameManager.hud.visible = false
