@@ -101,10 +101,11 @@ _data = {
 radius = 6.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D" unique_id=718501134 node_paths=PackedStringArray("camera") groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=718501134 node_paths=PackedStringArray("camera", "sprite") groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_7dd06")
 camera = NodePath("Camera2D")
+sprite = NodePath("PlayerAnimtator/Sprite2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=67175896]
 zoom = Vector2(3, 3)

@@ -66,6 +66,7 @@ func end_game():
 	var end_level_path = level_path + "level_" + str(end_level) + ".tscn"
 	if end_level_path == full_path:
 		area_stopped.emit()
+		
 
 func add_keys():
 	keys += 1

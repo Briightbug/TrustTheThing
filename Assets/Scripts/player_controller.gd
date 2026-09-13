@@ -4,6 +4,7 @@ class_name PlayerController
 @export var move_speed = 10.0
 @export var jump_strength = 8.0
 @export var camera : Camera2D
+@export var sprite : Sprite2D
 
 var direction = 0
 var speed_multiplier = 16.0
@@ -43,6 +44,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 
 	move_and_slide()
+
+#func _on_land():
+	## Squish the sprite, then spring back
+	#sprite.scale = Vector2(1.4, 0.8)
+	#var tween = create_tween()
+	#tween.tween_property(sprite, "scale", Vector2.ZERO, 0.2).set_trans(Tween.TRANS_ELASTIC)
+
 
 func teleport_to_location(new_location):
 	position = new_location

@@ -15,6 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# Pauses the game when reached the goal in the final level
 	if body is PlayerController:
+		get_tree().paused = true
 		stopwatch.stop()
 		
 		GameManager.result_screen.visible = true
